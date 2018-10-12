@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  
+  <display-name>ImportantWeb</display-name>
+  
+  <filter>
+  	<filter-name>FilterMe</filter-name>
+  	<filter-class>com.example.FirstFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterMe</filter-name>
+  	<url-pattern>/ShowMe</url-pattern>
+  </filter-mapping>
+  
+  <context-param>
+    <param-name>DBUSER</param-name>
+    <param-value>Kalindi Rawat</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>Demo</servlet-name>
+    <jsp-file>/First.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Demo</servlet-name>
+    <url-pattern>/Aptech</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Third</servlet-name>
+    <servlet-class>com.example.ThirdServlet</servlet-class>
+    <init-param>
+      <param-name>DBUSER</param-name>
+      <param-value>Ajay Singh</param-value>
+    </init-param>
+    <init-param>
+      <param-name>DBPWD</param-name>
+      <param-value>Aptech</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Third</servlet-name>
+    <url-pattern>/Third</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <servlet-class>com.example.FirstServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/First</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>Aptech</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
